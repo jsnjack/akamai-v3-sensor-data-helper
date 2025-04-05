@@ -1,6 +1,6 @@
 {
   "name": "akamai-v3-sensor-data-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Node.js module for decrypting Akamai v3 sensor data",
   "main": "index.js",
   "scripts": {
