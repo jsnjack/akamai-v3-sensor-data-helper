@@ -1,4 +1,4 @@
-const { extractCookieHash } = require('./index');
+const { extractCookieHash } = require('akamai-v3-sensor-data-helper');
 
 console.log(
     extractCookieHash(

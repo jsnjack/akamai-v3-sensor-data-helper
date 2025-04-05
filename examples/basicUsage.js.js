@@ -1,4 +1,4 @@
-const decryptor = require('../src');
+const decryptor = require('akamai-v3-sensor-data-helper');
 const fs = require('fs');
 
 // Example sensor data (replace with your actual sensor data)

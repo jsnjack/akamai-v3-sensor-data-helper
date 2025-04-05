@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { encryptSensorData } = require('./encryption');
-const { decryptSensorData } = require('./decryption');
+const { encryptSensorData, decryptSensorData } = require('akamai-v3-sensor-data-helper');
 
 // Test data
 const testPayloads = {
