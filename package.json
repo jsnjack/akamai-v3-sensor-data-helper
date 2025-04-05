@@ -1,0 +1,39 @@
+{
+  "name": "akamai-v3-sensor-data-helper",
+  "version": "1.0.0",
+  "description": "A Node.js module for decrypting Akamai v3 sensor data",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "babel src -d dist"
+  },
+  "keywords": [
+    "akamai",
+    "sensor-data",
+    "decryption",
+    "security",
+    "antibot"
+  ],
+  "author": "glizzykingdreko",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/parser": "^7.24.0",
+    "@babel/generator": "^7.24.0",
+    "@babel/traverse": "^7.24.0",
+    "@babel/types": "^7.24.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "jest": "^29.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glizzykingdreko/akamai-v3-sensor-data-helper"
+  },
+  "bugs": {
+    "url": "https://github.com/glizzykingdreko/akamai-v3-sensor-data-helper/issues"
+  },
+  "homepage": "https://github.com/glizzykingdreko/akamai-v3-sensor-data-helper#readme"
+}
