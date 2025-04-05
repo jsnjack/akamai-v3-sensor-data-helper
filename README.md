@@ -2,7 +2,7 @@
 
 A Node.js module for decrypting and encrypting Akamai v3 sensor data. This module helps you work with the sensor_data parameter used in Akamai's bot detection system.
 
-[![npm version](https://img.shields.io/npm/v/akamai-v3-sensor-helper.svg)](https://www.npmjs.com/package/akamai-v3-sensor-helper)
+[![npm version](https://img.shields.io/npm/v/akamai-v3-sensor-data-helper.svg)](https://www.npmjs.com/package/akamai-v3-sensor-data-helper)
 
 
 ## Table of Contents
@@ -60,7 +60,7 @@ This behavior is important to understand when implementing the encryption/decryp
 ## Installation
 
 ```bash
-npm install akamai-v3-sensor-helper
+npm install akamai-v3-sensor-data-helper
 ```
 
 ## Quick Start
@@ -68,7 +68,7 @@ npm install akamai-v3-sensor-helper
 ### Decryption
 
 ```javascript
-const decryptor = require('akamai-v3-sensor-helper');
+const decryptor = require('akamai-v3-sensor-data-helper');
 const fs = require('fs');
 
 // Read your input.js file content
@@ -238,7 +238,7 @@ For any inquiries or further information, please reach out:
 
 - Project Maintainer: [glizzykingdreko](mailto:glizzykingdreko@protonmail.com)
 - Twitter: [@glizzykingdreko](https://twitter.com/glizzykingdreko)
-- GitHub Project Link: [here](https://github.com/glizzykingdreko/akamai-v3-sensor-helper)
+- GitHub Project Link: [here](https://github.com/glizzykingdreko/akamai-v3-sensor-data-helper)
 - Antibot bypass solutions needed? [TakionAPI](https://takionapi.tech/)
 - You like my projects? [Buy me a coffee](https://www.buymeacoffee.com/glizzykingdreko)
 
