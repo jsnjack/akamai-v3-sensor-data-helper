@@ -1,7 +1,7 @@
 {
   "name": "akamai-v3-sensor-data-helper",
-  "version": "1.0.6",
-  "description": "A Node.js module for decrypting Akamai v3 sensor data",
+  "version": "1.0.7",
+  "description": "A Node.js module for decrypting Akamai v3 sensor data. Check out our web app at https://akamai-v3-tools.vercel.app and read the detailed guide at https://medium.com/@glizzykingdreko/akamai-v3-sensor-data-deep-dive-into-encryption-decryption-and-bypass-tools-da0adad2a784",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -35,5 +35,10 @@
   "bugs": {
     "url": "https://github.com/glizzykingdreko/akamai-v3-sensor-data-helper/issues"
   },
-  "homepage": "https://github.com/glizzykingdreko/akamai-v3-sensor-data-helper#readme"
+  "homepage": "https://github.com/glizzykingdreko/akamai-v3-sensor-data-helper#readme",
+  "related": {
+    "webapp": "https://akamai-v3-tools.vercel.app",
+    "webappSource": "https://github.com/glizzykingdreko/akamai-v3-tools",
+    "article": "https://medium.com/@glizzykingdreko/akamai-v3-sensor-data-deep-dive-into-encryption-decryption-and-bypass-tools-da0adad2a784"
+  }
 }
