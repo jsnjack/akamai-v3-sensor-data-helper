@@ -4,6 +4,10 @@ A Node.js module for decrypting and encrypting Akamai v3 sensor data. This modul
 
 [![npm version](https://img.shields.io/npm/v/akamai-v3-sensor-data-helper.svg)](https://www.npmjs.com/package/akamai-v3-sensor-data-helper)
 
+## Resources
+- 🌐 [Web App](https://akamai-v3-tools.vercel.app) - Try the module in your browser
+- 📚 [Source Code](https://github.com/glizzykingdreko/akamai-v3-tools) - Check out the web app implementation
+- 📖 [Detailed Guide](https://medium.com/@glizzykingdreko/akamai-v3-sensor-data-deep-dive-into-encryption-decryption-and-bypass-tools-da0adad2a784) - Read our comprehensive guide
 
 ## Table of Contents
 - [Akamai v3 Sensor Data Decryptor](#akamai-v3-sensor-data-decryptor)
@@ -36,24 +40,24 @@ Check-out my company that provides antibots and custom solutions [TakionApi](htt
 
 - Encrypt / Decrypt akamai v3 payloads
 - Extract file hash from script via Babel AST parsing
-- Extract cookie hash from bm_st cookie
+- Extract cookie hash from bm_sz cookie
 
 ## Initial Request Behavior
 
 When making requests to an Akamai-protected site, there's a specific sequence of events:
 
 1. **First Request**
-   - The initial request will not have a `bm_st` cookie
+   - The initial request will not have a `bm_sz` cookie
    - The sensor data will be encrypted using:
      - Default hash: `8888888`
      - File hash: extracted from the input.js script
-   - This request will trigger Akamai to set the `bm_st` cookie
+   - This request will trigger Akamai to set the `bm_sz` cookie
 
 2. **Subsequent Requests**
-   - After receiving the `bm_st` cookie, all future requests will use:
-     - Cookie hash: extracted from the `bm_st` cookie
+   - After receiving the `bm_sz` cookie, all future requests will use:
+     - Cookie hash: extracted from the `bm_sz` cookie
      - File hash: extracted from the input.js script
-   - This continues until the `bm_st` cookie is changed by Akamai
+   - This continues until the `bm_sz` cookie is changed by Akamai
 
 This behavior is important to understand when implementing the encryption/decryption process, as the first request requires special handling with the default hash.
 
@@ -103,7 +107,7 @@ const payload = {
 };
 
 // Cookie hash from Akamai
-const cookieHash = 3753014; // you can extract this from the bm_st cookie using decryptor.extractCookieHash(cookie)
+const cookieHash = 3753014; // you can extract this from the bm_sz cookie using decryptor.extractCookieHash(cookie)
 
 // Encrypt the data
 const result = decryptor.encrypt(payload, cookieHash, fileContent);
