@@ -256,7 +256,11 @@ function findListArray(ast) {
                 if (arrayArg.elements && arrayArg.elements.length > 0 &&
                     arrayArg.elements[0].type === 'ArrayExpression') {
                     const innerArray = arrayArg.elements[0];
-                    if (innerArray.elements && innerArray.elements.every(el => el.type === 'StringLiteral')) {
+                    if (
+                        innerArray.elements && 
+                        innerArray.elements.every(el => el.type === 'StringLiteral') &&
+                        innerArray.elements.length >= 10
+                    ) {
                         result = {
                             index: node.left.name,
                             list: innerArray.elements.map(el => el.value)

@@ -72,7 +72,6 @@ function extractFileHash(
             });
         }
     });
-
     vm.runInContext(result.legenda.code, context);
     return listDecoder(result.list, context[result.legenda.name])[context[result.index]]
 }

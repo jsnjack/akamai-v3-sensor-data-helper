@@ -28,6 +28,9 @@ A Node.js module for decrypting and encrypting Akamai v3 sensor data. This modul
     - [File Hash Extraction](#file-hash-extraction)
     - [Cookie Hash Extraction](#cookie-hash-extraction)
   - [Error Handling](#error-handling)
+  - [Version 1.0.9 Release Notes](#version-109-release-notes)
+    - [Fix Implemented](#fix-implemented)
+    - [A Note to the Community](#a-note-to-the-community)
   - [Contact](#contact)
 
 Please check-out also the [examples](examples) folder for more examples on how to use the module as well ask the [akamai-v2-decryptor](https://github.com/glizzykingdreko/akamai-sensordata-decryptor) for v2-sensors decryption.
@@ -234,6 +237,32 @@ The module provides comprehensive error handling for various scenarios:
 - Encryption/decryption process failures
 
 Each error case returns a descriptive error message in the response object.
+
+## Version 1.0.9 Release Notes
+
+Over the past few weeks, I've received numerous inquiries regarding issues with hash extraction. I'm pleased to announce that this has been addressed in version 1.0.9.
+
+### Fix Implemented
+
+The issue stemmed from the `extract_hash` function not adequately handling cases where Akamai introduced multiple `listArray` elements, likely as an obfuscation tactic. The solution involved adding a simple length check to ensure robustness:
+
+```javascript
+if (
+    innerArray.elements &&
+    innerArray.elements.every(el => el.type === 'StringLiteral') &&
+    innerArray.elements.length >= 10 // Added length check
+)
+```
+
+This adjustment ensures that the decryption process remains stable even with the updated payload structures.
+
+### A Note to the Community
+
+I want to take a moment to remind everyone that this project is open-source and maintained in my personal time. While I strive to address issues promptly, my availability can be limited.
+
+For those seeking a more comprehensive and supported Akamai solution, I invite you to explore [TakionApi](https://takionapi.tech), where we offer professional services tailored to your needs.
+
+Lastly, I'd like to encourage users to engage more deeply with the documentation and codebase. This particular fix was relatively straightforward, and with a bit of investigation, it could have been identified earlier. Your proactive involvement can greatly enhance the project's robustness and responsiveness.
 
 
 ## Contact
