@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { encryptSensorData, decryptSensorData } = require('akamai-v3-sensor-data-helper');
+const akamaiHelper = require('../src');
 
 // Test data
 const testPayloads = {
@@ -250,13 +250,13 @@ async function runTests() {
     console.log("Starting encryption/decryption tests...\n");
 
     // Read the file content from examples directory
-    const fileContent = fs.readFileSync("./akamaiScript.js", 'utf8');
-    const cookieHash = 12345678; // Example cookie hash
+    const fileData = fs.readFileSync("./scripts/example-2.js", 'utf8');
 
-    const encryptResult = encryptSensorData(
-        testPayloads, 
-        cookieHash, 
-        fileContent
+    const encryptResult = akamaiHelper.encrypt(
+        payload=testPayloads, 
+        cookieHash=3289904, 
+        fileContent=fileData, 
+        fileHash=null
     );
     
     if (!encryptResult.success) {
@@ -265,7 +265,11 @@ async function runTests() {
 
     console.log("✓ Encryption successful");
             
-    const decryptResult = await decryptSensorData(encryptResult.data.sensor_data, fileContent);
+    const decryptResult = akamaiHelper.decrypt(
+        sensorData=encryptResult.data.sensor_data, 
+        fileContent=fileData,
+        fileHash=null
+    );
             
     if (!decryptResult.success) {
         throw new Error(`Decryption failed: ${decryptResult.message}`);

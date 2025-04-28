@@ -128,7 +128,7 @@ function decryptSensorData(
     } catch (error) {
         return {
             success: false,
-            message: 'Unable to load sensor data'
+            message: 'Unable to load sensor data (pre-decryption)'
         };
     }
 
@@ -156,7 +156,7 @@ function decryptSensorData(
     } catch (error) {
         return {
             success: false,
-            message: 'Unable to parse sensor data'
+            message: 'Unable to parse sensor data (post-decryption)'
         };
     }
 }

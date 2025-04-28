@@ -157,9 +157,6 @@ function identifyIndex(ast) {
                 const lastMemberExpr = findLastMemberExpression(node.init);
 
                 if (lastMemberExpr) {
-                    const object = generate(lastMemberExpr.object).code;
-                    const property = generate(lastMemberExpr.property).code;
-                    arrayAccessPattern = `${object}[${property}]`;
                     let element = node.init.arguments[0].arguments[0];
                     result = {
                         list: element.object.name,
